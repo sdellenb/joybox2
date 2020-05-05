@@ -46,6 +46,33 @@ Otherwise the SDCard will get hammered by 5 parallel build processes and the sys
 
 6. Start the front-end with `DISPLAY=:0 chromium-browser --kiosk http://localhost:3000`
 
+## Install Dependencies
+
+Go to the `joybox2` folder and install client App dependencies with:
+
+    $ npm install
+
+If your IDE doesn't automatically install your .NET NuGet Dependencies, you can manually install them with:
+
+    $ dotnet restore
+
+## Dev Workflow
+
+Start a [watched .NET Core build](https://docs.servicestack.net/templates-websites#watched-net-core-builds) in the background from the command-line with:
+
+    $ dotnet watch run
+    watch : Started
+    Hosting environment: Development
+    Content root path: C:\Users\simon\git\joybox2\joybox2
+    Now listening on: https://localhost:5001
+    Application started. Press Ctrl+C to shut down.
+
+In a new terminal window start a watched nuxt dev server build with:
+
+    $ npm run dev
+
+Then open [http://localhost:3000](http://localhost:3000) in your browser to view your App served directly from Nuxt.js dev server and will proxy all Server requests to ServiceStack Server running on [https://localhost:5001](https://localhost:5001).
+
 ## Disclaimer
 
 Most of the REST API & DB backend code is based on the examples in [https://github.com/mjhea0/node-koa-api](https://github.com/mjhea0/node-koa-api).  
