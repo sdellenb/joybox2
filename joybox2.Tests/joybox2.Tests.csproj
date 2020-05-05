@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <DebugType>portable</DebugType>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\joybox2.ServiceInterface\joybox2.ServiceInterface.csproj" />
+    <ProjectReference Include="..\joybox2.ServiceModel\joybox2.ServiceModel.csproj" />
+
+    <PackageReference Include="NUnit" Version="3.12.*" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.*" />
+    <PackageReference Include="ServiceStack" Version="5.*" />
+    <PackageReference Include="ServiceStack.Kestrel" Version="5.*" />
+  </ItemGroup>
+
+</Project>
