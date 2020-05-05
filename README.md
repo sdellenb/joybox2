@@ -50,7 +50,7 @@ Otherwise the SDCard will get hammered by 5 parallel build processes and the sys
 
 Go to the `joybox2` folder and install client App dependencies with:
 
-    $ npm install
+    $ yarn install
 
 If your IDE doesn't automatically install your .NET NuGet Dependencies, you can manually install them with:
 
@@ -69,7 +69,7 @@ Start a [watched .NET Core build](https://docs.servicestack.net/templates-websit
 
 In a new terminal window start a watched nuxt dev server build with:
 
-    $ npm run dev
+    $ yarn dev
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser to view your App served directly from Nuxt.js dev server and will proxy all Server requests to ServiceStack Server running on [https://localhost:5001](https://localhost:5001).
 
