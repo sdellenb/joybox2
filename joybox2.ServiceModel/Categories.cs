@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using ServiceStack;
+using ServiceStack.DataAnnotations;
 
 namespace joybox2.ServiceModel {
+
     [Route("/categories")]
     public class GetCategories : IReturn<CategoriesResponse> { }
 
@@ -16,8 +18,12 @@ namespace joybox2.ServiceModel {
     }
 
     public class Category {
-        public int Id { get; set; }
+        [AutoIncrement]
+        public int Id { get; set; } // 'Id' is PrimaryKey by convention
+
+        [Required, Unique]
         public string Name { get; set; }
+
         public string Thumbnail { get; set; }
     }
 }

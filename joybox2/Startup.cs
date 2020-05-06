@@ -43,6 +43,9 @@ namespace joybox2
             {
                 AppSettings = new NetCoreAppSettings(Configuration)
             });
+
+            // Override GUID serializer to keep the dashes.
+            JsConfig<Guid>.SerializeFn = guid => guid.ToString();
         }
     }
 
