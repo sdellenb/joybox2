@@ -14,6 +14,8 @@ using ServiceStack.Web;
 using System;
 using ServiceStack.Text;
 using ServiceStack.Logging;
+using ServiceStack.Data;
+using ServiceStack.OrmLite;
 
 namespace joybox2
 {
@@ -23,6 +25,10 @@ namespace joybox2
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public new void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IDbConnectionFactory>(
+                // InMemory Sqlite DB, replace with environment-dependent path to use a static file.
+                new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider)
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

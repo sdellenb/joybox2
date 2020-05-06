@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="ServiceStack" Version="5.*" />
+    <PackageReference Include="ServiceStack.OrmLite.Sqlite.Core" Version="5.*" />
   </ItemGroup>
 
   <ItemGroup>
