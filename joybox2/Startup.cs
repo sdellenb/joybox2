@@ -37,7 +37,7 @@ namespace joybox2 {
     }
 
     public class AppHost : AppHostBase {
-        public AppHost() : base("joybox2", typeof(MyServices).Assembly) { }
+        public AppHost() : base("joybox2", typeof(ApiServices).Assembly) { }
 
         // Configure your AppHost with the necessary configuration and dependencies your App needs
         public override void Configure(Container container) {

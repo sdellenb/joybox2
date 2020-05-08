@@ -13,20 +13,20 @@ namespace joybox2.Tests
         public UnitTest()
         {
             appHost = new BasicAppHost().Init();
-            appHost.Container.AddTransient<MyServices>();
+            appHost.Container.AddTransient<ApiServices>();
         }
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => appHost.Dispose();
 
         [Test]
-        public void Can_call_MyServices()
+        public void Can_call_ApiServices()
         {
-            var service = appHost.Container.Resolve<MyServices>();
+            var service = appHost.Container.Resolve<ApiServices>();
 
-            var response = (HelloResponse)service.Any(new Hello { Name = "World" });
+            var response = (CategoriesResponse)service.GetJson(new GetCategory { Id = 1 });
 
-            Assert.That(response.Result, Is.EqualTo("Hello, World!"));
+            Assert.That(response.Data, Is.Not.Empty);
         }
     }
 }
