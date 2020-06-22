@@ -11,8 +11,11 @@
     <ProjectReference Include="..\joybox2.ServiceModel\joybox2.ServiceModel.csproj" />
 
     <PackageReference Include="NUnit" Version="3.12.*" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.15.*" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.*" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.*">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.*" />
     <PackageReference Include="ServiceStack" Version="5.*" />
     <PackageReference Include="ServiceStack.Kestrel" Version="5.*" />
   </ItemGroup>
